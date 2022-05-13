@@ -1,0 +1,144 @@
+/* unidad de medida rem (relativo al html) 1 rem= 16px
+html{
+    font-size: 18px;
+}
+
+p{
+    font-size: 2rem;
+}*/
+
+/* unidad de medida en (relativa al contenedor que contiene las etiquetas) 
+
+.caja{
+    font-size: 22px;
+}
+
+p{
+    font-size: 1em;
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rosybrown;
+}
+
+/* Estilos de header */
+
+header{
+    margin-bottom: 1rem;
+}
+
+header h1{
+    text-align: center;
+}
+
+/* estilos del menu */
+
+nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+nav ul li{
+    background-color: whitesmoke;
+    border-radius: 1rem;
+    padding: 0.3rem;
+}
+
+/* estilos main */
+
+.mainNosotros{
+    height: 70vh;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-areas: "mainP mainP"
+                         "imagen1 imagen2"
+                         "imagen3 imagen4"
+                         "parrafo parrafo";
+    justify-content: center;
+    justify-items: center;
+}
+
+.sectionNosotros{
+    display: none;
+}
+
+.mainP{
+    grid-area: mainP;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.imagen1{
+    grid-area: imagen1;
+}
+
+.imagen2{
+    grid-area: imagen2;
+}
+
+.imagen3{
+    grid-area: imagen3;
+}
+
+.imagen4{
+    grid-area: imagen4;
+}
+
+.parrafo{
+    grid-area: parrafo;
+    text-align: center;
+}
+
+/* propiedades del footer */
+
+footer p{
+    text-align: center;
+}
+
+/* mq */
+
+@media screen and (min-width:600px){
+    nav ul{
+     justify-content: space-around;
+    }
+
+    .sectionNosotros{
+        display: block;
+        grid-area: sectionNosotros;
+    }
+
+    .mainNosotros{
+        height: 80vh;
+        grid-template-areas: "mainP mainP mainP mainP"
+                             "sectionNosotros sectionNosotros sectionNosotros sectionNosotros"
+                             "imagen1 imagen2 imagen3 imagen4"
+                             "parrafo parrafo parrafo parrafo";
+        column-gap: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body{
+        background-color: aquamarine;
+    }
+    
+    .mainNosotros{
+        grid-template-areas: "mainP mainP sectionNosotros sectionNosotros"
+                             "imagen1 imagen2 imagen3 imagen4"
+                             "parrafo parrafo parrafo parrafo";
+        column-gap: 2.5rem;
+    }
+    
+    .mainP{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
